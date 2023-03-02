@@ -11,6 +11,25 @@ namespace ConsoleCS
     {
         static void Main(string[] args)
         {
+            string name;
+            name = Console.ReadLine();
+            string hola = "fran";
+            while (!name.Contains(hola))
+            {
+                name = Console.ReadLine();
+            }
+
+            Greatings(name);
+
+        }
+        private static void Greatings(string name)
+        {
+            Console.WriteLine("Good Morning " + name);
+        }
+
+        private static void Counter()
+        {
+
             int HowManyNumbersAre;
             int NumberToLookFor;
             int HowManyOfThisNumberAre = 0;
@@ -26,16 +45,16 @@ namespace ConsoleCS
 
             Console.WriteLine("NUMBER TO LOOK FOR - ");
             NumberToLookFor = Convert.ToInt32(Console.ReadLine());
-            while(NumberToLookFor > HowManyNumbersAre) 
+            while (NumberToLookFor > HowManyNumbersAre)
             {
                 Console.WriteLine("NUMBER TO BIG, USE ONE SMALLER THANK..." + HowManyNumbersAre);
-                NumberToLookFor = Convert.ToInt32(Console.ReadLine());               
+                NumberToLookFor = Convert.ToInt32(Console.ReadLine());
             }
             Console.WriteLine("---------------------");
 
             Console.WriteLine("PRINT NUMBERS?  true/false");
             writtenNumbers = Convert.ToBoolean(Console.ReadLine());
-            
+
 
             Console.WriteLine("---------------------");
 
@@ -44,13 +63,13 @@ namespace ConsoleCS
 
             Random rnd = new Random();
 
-            
-                foreach (int k in NumList)
-                {
-                    NumList[k] = rnd.Next(0, HowManyNumbersAre);
+
+            foreach (int k in NumList)
+            {
+                NumList[k] = rnd.Next(0, HowManyNumbersAre);
                 if (writtenNumbers)
                 {
-                    if (NumList[k].Equals(NumberToLookFor) )
+                    if (NumList[k].Equals(NumberToLookFor))
                     {
                         HowManyOfThisNumberAre++;
                         Console.WriteLine(NumList[k] + "<----------------------");
@@ -60,13 +79,12 @@ namespace ConsoleCS
                 }
                 else
                     continue;
-                }
-            
+            }
+
 
             Console.WriteLine("there Are" + " " + HowManyOfThisNumberAre + " " + "instances of the number" + " " + NumberToLookFor);
-
         }
 
     }
-   
+
 }
